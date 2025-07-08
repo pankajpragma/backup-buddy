@@ -1,16 +1,24 @@
 # Change Log
 
-All notable changes to the "file-backup-extension" extension will be documented in this file.
+All notable changes to the "Backup Buddy" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-07-08
+
+### Changed
+
+- Updated branding and documentation for marketplace release
+- Cleaned up README for end-users
+- Fixed license consistency (MIT)
+
 ## [1.0.0] - 2025-07-08
 
 ### Added
 
-- Initial release of File Backup Extension
+- Initial release of Backup Buddy
 - Backup button in editor title bar with 💾 icon
 - Status bar icons: 💾 for backup and 🧹 for cleanup
 - Command palette integration with "Back Up Current File" and "Clean Up Old Backup Files" commands

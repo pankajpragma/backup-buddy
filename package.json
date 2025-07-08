@@ -2,7 +2,7 @@
   "name": "backup-buddy",
   "displayName": "Backup Buddy",
   "description": "Backup files with folder structure preservation and automatic cleanup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "pankajdadure",
   "repository": {
     "type": "git",
@@ -22,6 +22,10 @@
   "categories": [
     "Other"
   ],
+  "homepage": "https://github.com/pankajpragma/backup-buddy#readme",
+  "bugs": {
+    "url": "https://github.com/pankajpragma/backup-buddy/issues"
+  },
   "galleryBanner": {
     "color": "#232f3e",
     "theme": "dark"
