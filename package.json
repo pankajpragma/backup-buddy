@@ -1,0 +1,114 @@
+{
+  "name": "backup-buddy",
+  "displayName": "Backup Buddy",
+  "description": "Backup files with folder structure preservation and automatic cleanup",
+  "version": "1.0.0",
+  "publisher": "pankaj-dadure",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pankaj-dadure/backup-buddy.git"
+  },
+  "keywords": [
+    "backup",
+    "file",
+    "save",
+    "version control",
+    "history"
+  ],
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#232f3e",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fileBackup.backupCurrentFile",
+        "title": "Back Up Current File",
+        "icon": "$(save)"
+      },
+      {
+        "command": "fileBackup.cleanupOldBackups",
+        "title": "Clean Up Old Backup Files",
+        "icon": "$(trash)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "fileBackup.backupCurrentFile",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "fileBackup.backupCurrentFile"
+        },
+        {
+          "command": "fileBackup.cleanupOldBackups"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "File Backup",
+      "properties": {
+        "fileBackup.backupDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Custom backup directory path. If empty, defaults to .vscode/backups in the current workspace."
+        },
+        "fileBackup.autoBackupOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically backup files when they are saved."
+        },
+        "fileBackup.preserveFolderStructure": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve the original folder structure in backups."
+        },
+        "fileBackup.cleanupDays": {
+          "type": "number",
+          "default": 30,
+          "minimum": 1,
+          "description": "Number of days to keep backup files before they can be cleaned up."
+        },
+        "fileBackup.autoCleanup": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically clean up old backup files when creating new backups."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4"
+  }
+}
