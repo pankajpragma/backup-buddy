@@ -1,4 +1,4 @@
-# File Backup Extension
+# Backup Buddy
 
 A Visual Studio Code extension that provides easy file backup functionality with a single click, folder structure preservation, and automatic cleanup of old backups.
 
@@ -134,6 +134,11 @@ This extension contributes the following settings:
 - Large files may take a moment to backup
 
 ## Release Notes
+
+### 1.0.1
+
+- Updated branding and documentation
+- Production-ready release
 
 ### 1.0.0
 
