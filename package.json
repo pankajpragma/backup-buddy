@@ -3,7 +3,7 @@
   "displayName": "Backup Buddy",
   "description": "Backup files with folder structure preservation and automatic cleanup",
   "version": "1.0.0",
-  "publisher": "pankaj-dadure",
+  "publisher": "pankajdadure",
   "repository": {
     "type": "git",
     "url": "https://github.com/pankajpragma/backup-buddy.git"
