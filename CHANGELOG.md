@@ -6,13 +6,26 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-## [1.0.1] - 2025-07-08
+## [1.0.2] - 2024-01-15
 
-### Changed
+### 🔄 Version Update
+- **Version Bump**: Updated to v1.0.2 for continued development
+- **Maintenance Release**: Preparation for future enhancements
 
-- Updated branding and documentation for marketplace release
-- Cleaned up README for end-users
-- Fixed license consistency (MIT)
+## [1.0.1] - 2024-01-15
+
+### 🛡️ AI Protection Focus
+- **Enhanced Description**: AI-safe file backup with focus on protecting code from AI assistants (Copilot, ChatGPT, Claude)
+- **Marketplace Keywords**: Added 11 new AI-focused keywords for better discovery
+- **Professional Documentation**: Complete README rewrite with AI workflow integration guides
+- **Icon Visibility**: Detailed descriptions of button locations and professional presentation
+- **Developer-Focused**: Enhanced language targeting AI development scenarios
+
+### 🎨 Professional Enhancements
+- **Branding Update**: AI protection messaging throughout documentation
+- **Visual Improvements**: Professional icon descriptions and visibility guidelines
+- **User Experience**: Enhanced interface descriptions with emoji-based navigation
+- **Workflow Integration**: Specific AI assistant integration scenarios and best practices
 
 ## [1.0.0] - 2025-07-08
 

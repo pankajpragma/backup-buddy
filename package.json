@@ -1,8 +1,8 @@
 {
   "name": "backup-buddy",
   "displayName": "Backup Buddy",
-  "description": "Backup files with folder structure preservation and automatic cleanup",
-  "version": "1.0.1",
+  "description": "🛡️ AI-Safe File Backup - Protect your code from AI assistants (Copilot, ChatGPT, Claude) with instant backups. Preserve folder structure, auto-cleanup, and secure your intellectual property during AI-assisted development.",
+  "version": "1.0.2",
   "publisher": "pankajdadure",
   "repository": {
     "type": "git",
@@ -10,9 +10,20 @@
   },
   "keywords": [
     "backup",
-    "file",
-    "save",
+    "ai protection",
+    "copilot",
+    "chatgpt",
+    "claude",
+    "ai safety",
+    "code protection",
+    "intellectual property",
+    "file security",
     "version control",
+    "ai development",
+    "code backup",
+    "ai assistant",
+    "developer tools",
+    "privacy",
     "history"
   ],
   "license": "MIT",
@@ -22,6 +33,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "icon.png",
   "homepage": "https://github.com/pankajpragma/backup-buddy#readme",
   "bugs": {
     "url": "https://github.com/pankajpragma/backup-buddy/issues"
