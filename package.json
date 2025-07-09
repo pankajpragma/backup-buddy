@@ -2,7 +2,7 @@
   "name": "backup-buddy",
   "displayName": "Backup Buddy",
   "description": "🛡️ AI-Safe File Backup - Protect your code from AI assistants (Copilot, ChatGPT, Claude) with instant backups. Preserve folder structure, auto-cleanup, and secure your intellectual property during AI-assisted development.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "pankajdadure",
   "repository": {
     "type": "git",
@@ -43,7 +43,11 @@
     "theme": "dark"
   },
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "onCommand:fileBackup.backupCurrentFile",
+    "onCommand:fileBackup.cleanupOldBackups",
+    "onCommand:fileBackup.rollbackCurrentFile",
+    "onCommand:fileBackup.showLogs"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -57,14 +61,37 @@
         "command": "fileBackup.cleanupOldBackups",
         "title": "Clean Up Old Backup Files",
         "icon": "$(trash)"
+      },
+      {
+        "command": "fileBackup.rollbackCurrentFile",
+        "title": "Rollback to Latest Backup",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "fileBackup.showLogs",
+        "title": "Show Extension Logs",
+        "category": "File Backup",
+        "icon": "$(output)"
       }
     ],
     "menus": {
       "editor/title": [
         {
           "command": "fileBackup.backupCurrentFile",
-          "when": "editorTextFocus",
+          "when": "editorTextFocus && !isInDiffEditor && resourceScheme == file",
           "group": "navigation"
+        },
+        {
+          "command": "fileBackup.rollbackCurrentFile",
+          "when": "editorTextFocus && !isInDiffEditor && resourceScheme == file",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "fileBackup.backupCurrentFile",
+          "when": "!explorerResourceIsFolder",
+          "group": "backup"
         }
       ],
       "commandPalette": [
@@ -73,9 +100,27 @@
         },
         {
           "command": "fileBackup.cleanupOldBackups"
+        },
+        {
+          "command": "fileBackup.rollbackCurrentFile"
+        },
+        {
+          "command": "fileBackup.showLogs"
         }
       ]
     },
+    "keybindings": [
+      {
+        "command": "fileBackup.backupCurrentFile",
+        "key": "ctrl+shift+b",
+        "when": "editorTextFocus && !isInDiffEditor && resourceScheme == file"
+      },
+      {
+        "command": "fileBackup.rollbackCurrentFile",
+        "key": "ctrl+shift+r",
+        "when": "editorTextFocus && !isInDiffEditor && resourceScheme == file"
+      }
+    ],
     "configuration": {
       "title": "File Backup",
       "properties": {

@@ -6,11 +6,60 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-## [1.0.2] - 2024-01-15
+## [1.0.3] - 2024-12-19
 
-### 🔄 Version Update
-- **Version Bump**: Updated to v1.0.2 for continued development
-- **Maintenance Release**: Preparation for future enhancements
+### Fixed
+- **Critical Bug Fix**: Prevented infinite backup loops when editing files in backup directories
+- **UI Bug Fix**: Fixed multiple alert dialogs appearing when backup fails - now shows only one alert
+- Added validation to exclude files already in backup directories (`.vscode/backups`, `backups`, `.backup`, `backup`)
+- Added validation to exclude `.bak` files from being backed up again
+- Enhanced file validation with `validateNotInBackupDirectory` method
+- Made auto-backup operations silent to prevent notification spam
+
+### Security
+- Improved backup directory detection to prevent accidental recursive backups
+- Added comprehensive path pattern matching for backup directory identification
+
+### Changed
+- Version bump to 1.0.3
+- Enhanced validation logic in backup workflow
+
+## [1.0.2] - 2024-12-19
+
+### Added
+- **Rollback Feature**: New rollback functionality to restore files from their latest backup
+  - `fileBackup.rollbackCurrentFile` command to rollback the active file
+  - Confirmation dialog with backup details (date, time, file size)
+  - Smart toolbar icon that appears only when backups exist for the current file
+  - Progress reporting during rollback operations
+- **Centralized Logging System**: Comprehensive logging with different levels (DEBUG, INFO, WARN, ERROR) and dedicated output channel
+- **Input Validation and Security**: File path validation, backup directory validation, and security checks to prevent malicious operations
+- **Progress Indicators**: Visual progress reporting for long-running operations like cleanup and bulk backups
+- **Enhanced Error Handling**: Improved error messages and user feedback throughout the extension
+- **Show Logs Command**: New command `fileBackup.showLogs` to display extension logs for debugging
+
+### Enhanced
+- **Status Bar**: Added dynamic rollback button (↩️) that appears only when backups exist for the current file
+- **Backup Operations**: Added step-by-step progress reporting and comprehensive validation
+- **Cleanup Operations**: Enhanced with progress tracking and better error handling
+- **Status Bar Integration**: Integrated logging for better debugging and monitoring
+- **Extension Lifecycle**: Improved activation and deactivation with proper cleanup
+
+### Security
+- Added file path traversal protection
+- Implemented backup directory validation
+- Added file size and type validation
+- Enhanced error handling to prevent information leakage
+- Rollback operations include validation and confirmation prompts
+
+### Technical
+- Refactored codebase with better separation of concerns
+- Added comprehensive TypeScript types and interfaces
+- Improved code maintainability and extensibility
+- Async/await pattern implementation for better performance
+
+### Changed
+- Version bump for maintenance release
 
 ## [1.0.1] - 2024-01-15
 

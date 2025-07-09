@@ -9,7 +9,7 @@ suite("Extension Test Suite", () => {
   test("Extension should be present", () => {
     assert.ok(
       vscode.extensions.getExtension(
-        "your-publisher-name.file-backup-extension"
+        "pankajdadure.backup-buddy"
       )
     );
   });
